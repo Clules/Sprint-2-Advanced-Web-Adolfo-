@@ -1,0 +1,13 @@
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/model/AuthRequest.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/config/JwtRequestFilter.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/repository/UserRepository.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/controller/AuthController.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/util/JwtUtil.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/controller/BookController.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/model/Book.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/repository/BookRepository.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/model/User.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/config/SecurityConfig.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/service/CustomUserDetailsService.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/config/SwaggerConfig.java
+/Users/adolfoarroyo/Documents/Tecmx/sexto semestre/Web/srcweb/LibraryManagement/src/main/java/com/example/library/LibraryApplication.java
