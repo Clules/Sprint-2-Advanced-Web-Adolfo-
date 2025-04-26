@@ -6,4 +6,4 @@ CREATE TABLE books (
     publication_year NUMBER CHECK (publication_year > 0),    -- Publication year must be a positive number  
     genre VARCHAR2(50),                                       -- Genre of the book, can be null  
     pages NUMBER CHECK (pages > 0)                            -- Number of pages must be a positive number  
-);  
+);   
