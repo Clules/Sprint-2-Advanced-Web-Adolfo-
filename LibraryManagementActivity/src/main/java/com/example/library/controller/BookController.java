@@ -4,6 +4,7 @@ import com.example.library.model.Book;
 import com.example.library.repository.BookRepository;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -38,10 +39,12 @@ public class BookController {
    public List<Book> getAllBooks() {
       return this.bookRepository.findAll();
    }
-   @Operation(summary = "Get book by ID", description = "Retrieve a book by its ID")
+   @Operation(summary = "Get book by ID", description = "Retrieve a book by its ID", parameters = {
+      @Parameter(name = "id", description = "ID of the book to retrieve")
+   })
    @ApiResponse(responseCode = "200", description = "Successfully retrieved book")
    @ApiResponse(responseCode = "404", description = "Book not found")
-   @GetMapping({"/{id}"})
+   @GetMapping("/{id}")
    public ResponseEntity<Book> getBookById(@PathVariable Long id) {
       return (ResponseEntity)this.bookRepository.findById(id).map((book) -> {
          return ResponseEntity.ok().body(book);
@@ -60,7 +63,9 @@ public class BookController {
    @ApiResponse(responseCode = "200", description = "Successfully updated book")
    @ApiResponse(responseCode = "404", description = "Book not found")
    @PutMapping("/{id}")
-   public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book bookDetails) {
+   public ResponseEntity<Book> updateBook(
+      @Parameter(description = "ID of the book to update") @PathVariable Long id,
+      @RequestBody Book bookDetails) {
       return (ResponseEntity)this.bookRepository.findById(id).map((book) -> {
          book.setTitle(bookDetails.getTitle());
          book.setAuthor(bookDetails.getAuthor());
@@ -76,7 +81,9 @@ public class BookController {
    @ApiResponse(responseCode = "204", description = "Successfully deleted book")
    @ApiResponse(responseCode = "404", description = "Book not found")
    @DeleteMapping("/{id}")
-   public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
+   public ResponseEntity<Void> deleteBook(
+      @Parameter(description = "ID of the book to delete") @PathVariable Long id
+   ) {
       return (ResponseEntity)this.bookRepository.findById(id).map((book) -> {
          this.bookRepository.delete(book);
          return ResponseEntity.noContent().build();
