@@ -4,6 +4,13 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <!-- hard-coded, not using ${spring.boot.version} -->
+        <version>3.2.0</version>
+        <relativePath/>  <!-- ensures it’s always fetched from Central -->
+    </parent>
     <groupId>com.example</groupId>
     <artifactId>library</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -113,6 +120,15 @@
                             <version>0.15.0</version>
                         </path>
                     </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>

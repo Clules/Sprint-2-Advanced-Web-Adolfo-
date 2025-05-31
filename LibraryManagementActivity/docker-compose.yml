@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  # ─── Backend: Spring Boot API ──────────────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: library-api
+    environment:
+      ORACLE_URL: jdbc:oracle:thin:@testdb_high?TNS_ADMIN=/opt/oracle/wallet
+      ORACLE_USER: ADMIN
+      ORACLE_PWD: Password1234
+    ports:
+      - "8080:8080"
+    # (Si necesitas montarlo en desarrollo, podrías agregar un volume aquí)
+
+  # ─── Frontend: Vite + React + Tailwind ────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # Durante la construcción de /app/dist, Vite tomará esta URL como API base
+        VITE_API_BASE_URL: http://localhost:8080
+    container_name: library-ui
+    ports:
+      # Mapeamos el puerto 80 del container a 3000 en el host
+      - "3000:80"
+    depends_on:
+      - backend

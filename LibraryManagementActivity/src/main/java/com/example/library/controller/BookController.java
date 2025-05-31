@@ -45,7 +45,8 @@ public class BookController {
    @ApiResponse(responseCode = "200", description = "Successfully retrieved book")
    @ApiResponse(responseCode = "404", description = "Book not found")
    @GetMapping("/{id}")
-   public ResponseEntity<Book> getBookById(@PathVariable Long id) {
+   public ResponseEntity<Book> getBookById(
+      @PathVariable("id") Long id) {
       return (ResponseEntity)this.bookRepository.findById(id).map((book) -> {
          return ResponseEntity.ok().body(book);
       }).orElse(ResponseEntity.notFound().build());

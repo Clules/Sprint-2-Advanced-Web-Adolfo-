@@ -1,0 +1,7 @@
+# Ignorar dependencias locales y directorios de build
+node_modules
+dist
+.vscode
+.DS_Store
+npm-debug.log*
+.env
